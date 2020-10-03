@@ -23,7 +23,6 @@ const docSections = document.querySelectorAll("section");
 
 const navListFrag = document.createDocumentFragment();
 
-console.log(docSections);
 /**
  * End Global Variables
  * Start Helper Functions
@@ -59,10 +58,8 @@ const observeSections = () => {
   let observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log(entry.target.id, "inView");
         entry.target.classList.add("your-active-class");
       } else if (!entry.isIntersecting) {
-        console.log(entry.target.id, "not inView");
         entry.target.classList.remove("your-active-class");
       }
     });
